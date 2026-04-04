@@ -28,7 +28,7 @@ The system is designed to be fast, responsive, and interactive, with real-time f
 - Deduplication with highest-score selection
 - Click-to-copy emoji functionality
 - Suggestion buttons for quick interaction
-- Clean and responsive UI
+- Clean and responsive UI built with Tailwind CSS
 
 ---
 
@@ -65,11 +65,11 @@ Each match type is assigned a weight:
 - Fuzzy match → 0.5  
 - Semantic similarity → 0.4  
 
-Results are:
-- Aggregated
-- Deduplicated using a Map
-- Sorted by score
-- Top results returned
+Pipeline:
+- Aggregate results
+- Deduplicate using a `Map`
+- Sorte by score
+- Return top matches
 
 ---
 
@@ -81,11 +81,22 @@ Results are:
 
 ---
 
+## DevOps & Tooling
+
+- Implemented **CI pipeline using GitHub Actions**  
+  - Automatically installs dependencies and builds the project on every push  
+- **Dockerized application** using multi-stage builds  
+  - Uses Node.js for build and Nginx for production serving
+
+---
+
 ## Tech Stack
 
 - React (Vite)
 - JavaScript (ES6+)
 - Tailwind CSS
+- GitHub Actions (CI)
+- Docker
 
 ---
 
@@ -108,12 +119,25 @@ npm install
 npm run dev
 ```
 
+## Running with Docker
+
+```bash
+docker build -t semantic-emoji-predictor .
+docker run -p 8080:80 semantic-emoji-predictor
+```
+
+Then open: http://localhost:8080
+
+---
+
 ## Future Improvements
 
 - Better stemming/tokenization (Porter stemmer or NLP library)
 - Phrase-level semantic matching
 - Emoji usage history / personalization
 - Improved UI animations and feedback
+
+---
 
 ## Author
 
