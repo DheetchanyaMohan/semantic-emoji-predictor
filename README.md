@@ -55,8 +55,6 @@ The system is designed to be fast, responsive, and interactive, with real-time f
 - Measures similarity based on vector angle  
 - Time Complexity: O(m + n)
 
----
-
 ### 3. Scoring and Ranking
 
 Each match type is assigned a weight:
@@ -70,8 +68,6 @@ Pipeline:
 - Deduplicate using a `Map`
 - Sorte by score
 - Return top matches
-
----
 
 ### 4. Performance Optimizations
 
